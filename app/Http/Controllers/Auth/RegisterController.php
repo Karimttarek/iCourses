@@ -76,8 +76,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'last_login_ip' => request()->getClientIp()
         ]);
+        $user->attachRole('student');
         return $user;
-        // $user->attachRole('student');
-        // return $user;
     }
 }
